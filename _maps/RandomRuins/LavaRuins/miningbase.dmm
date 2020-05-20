@@ -252,32 +252,6 @@
 /obj/vehicle/ridden/atv,
 /turf/open/floor/plasteel/white,
 /area/mine/living_quarters)
-"aG" = (
-/obj/machinery/airalarm{
-	pixel_y = 24
-	},
-/obj/machinery/computer/shuttle/mining{
-	req_access = null
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/production)
-"aH" = (
-/obj/structure/closet/crate,
-/obj/item/dice/d4,
-/obj/effect/turf_decal/tile/brown{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/production)
 "aJ" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -697,16 +671,6 @@
 /obj/machinery/door/airlock{
 	name = "Closet"
 	},
-/turf/open/floor/plating,
-/area/mine/production)
-"bN" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/mine/production)
-"bO" = (
-/obj/machinery/space_heater,
 /turf/open/floor/plating,
 /area/mine/production)
 "bP" = (
@@ -2185,6 +2149,13 @@
 	},
 /turf/open/floor/plating,
 /area/mine/eva)
+"hS" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/mine/production)
 "id" = (
 /obj/machinery/door/airlock{
 	name = "Restroom"
@@ -2304,6 +2275,19 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"om" = (
+/obj/machinery/airalarm{
+	pixel_y = 24
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 4
+	},
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel,
+/area/mine/production)
 "qr" = (
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -2572,6 +2556,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"IU" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/obj/machinery/computer/shuttle/mining{
+	req_access = null
+	},
+/turf/open/floor/plasteel,
+/area/mine/production)
 "Jk" = (
 /obj/machinery/door/airlock{
 	id_tag = "miningdorm3";
@@ -2763,6 +2759,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"YM" = (
+/obj/structure/closet/crate,
+/obj/item/dice/d4,
+/turf/open/floor/plating,
+/area/mine/production)
 "YP" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -3930,7 +3931,7 @@ ab
 ac
 ak
 aw
-aG
+om
 aT
 SK
 jV
@@ -3962,7 +3963,7 @@ ab
 ac
 ak
 FB
-aH
+IU
 aC
 lZ
 RB
@@ -4062,7 +4063,7 @@ aq
 aJ
 bs
 ao
-bN
+hS
 aw
 aw
 ax
@@ -4094,7 +4095,7 @@ ar
 YL
 bt
 ao
-bO
+YM
 aw
 cd
 cy
