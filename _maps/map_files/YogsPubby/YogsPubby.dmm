@@ -52616,6 +52616,14 @@
 	icon_state = "platingdmg1"
 	},
 /area/maintenance/department/engine)
+"bXW" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	name = "Port Docking Bay 1"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "bXY" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -56841,6 +56849,20 @@
 	},
 /turf/open/floor/plating/airless,
 /area/engine/engineering)
+"daj" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/white/corner{
+	dir = 1
+	},
+/area/hallway/secondary/entry)
 "dci" = (
 /obj/structure/rack,
 /obj/item/gun/energy/laser/practice,
@@ -56929,6 +56951,17 @@
 	},
 /turf/open/floor/plating,
 /area/hallway/secondary/exit/departure_lounge)
+"dqX" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/advanced_airlock_controller{
+	dir = 4;
+	pixel_x = -24
+	},
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "dqY" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -57253,6 +57286,15 @@
 /obj/effect/spawner/lootdrop/two_percent_xeno_egg_spawner,
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"eRM" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "eVy" = (
 /obj/effect/turf_decal/arrows{
 	dir = 8
@@ -57628,6 +57670,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"gnw" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	name = "Port Docking Bay 1"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "gnB" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/tile/green,
@@ -57852,17 +57905,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/white,
 /area/medical/sleeper)
-"gSz" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "gSH" = (
 /turf/closed/wall,
 /area/lawoffice)
@@ -57942,15 +57984,6 @@
 	icon_state = "panelscorched"
 	},
 /area/maintenance/department/science)
-"hfC" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer1{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "hfZ" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/requests_console{
@@ -58107,17 +58140,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/maintenance/department/science)
-"hQj" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer1{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/advanced_airlock_controller{
-	dir = 8;
-	pixel_x = 24
-	},
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "hQz" = (
 /obj/structure/closet/emcloset/anchored,
 /turf/open/floor/plating,
@@ -58240,15 +58262,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
-"ijJ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	icon_state = "scrub_map_on-3"
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "ijU" = (
 /obj/effect/spawner/lootdrop/organ_spawner,
 /obj/structure/closet/crate,
@@ -58351,6 +58364,16 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/quartermaster/sorting)
+"iLF" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	name = "Port Docking Bay 1"
+	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "iPj" = (
 /obj/machinery/igniter{
 	id = "xenoigniter";
@@ -58410,6 +58433,11 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"jaY" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "jhD" = (
 /obj/structure/sink{
 	dir = 8;
@@ -58554,6 +58582,21 @@
 "jOB" = (
 /turf/open/floor/plating,
 /area/storage/emergency/starboard)
+"jPc" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "jPf" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -58887,19 +58930,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
-"kWP" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel/white/corner{
+"kTz" = (
+/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer1{
 	dir = 1
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/advanced_airlock_controller{
+	dir = 8;
+	pixel_x = 24
+	},
+/turf/open/floor/plating,
 /area/hallway/secondary/entry)
 "kWQ" = (
 /obj/structure/cable{
@@ -58998,14 +59038,6 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
-"lxP" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "lzJ" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/carpet,
@@ -59283,17 +59315,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
-"mxP" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
-	},
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "mzl" = (
 /obj/structure/chair,
 /obj/machinery/atmospherics/components/unary/outlet_injector/on{
@@ -59627,16 +59648,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
-"nJo" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 1;
-	icon_state = "vent_map_on-1"
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "nNN" = (
 /obj/structure/disposaloutlet{
 	dir = 4
@@ -60049,14 +60060,14 @@
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
-"peW" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
+"pfv" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	icon_state = "scrub_map_on-3"
+	},
+/turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
 "pfP" = (
 /obj/structure/table,
@@ -60174,21 +60185,6 @@
 /obj/structure/closet/crate,
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
-"pMh" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "pNy" = (
 /obj/structure/closet/firecloset,
 /obj/machinery/camera{
@@ -60225,16 +60221,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/chemistry)
-"pUl" = (
-/obj/machinery/holopad,
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "pVD" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -60622,17 +60608,6 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
-"rqq" = (
-/obj/machinery/atmospherics/components/binary/dp_vent_pump/layer1{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/obj/machinery/advanced_airlock_controller{
-	dir = 4;
-	pixel_x = -24
-	},
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "rrU" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -60884,15 +60859,6 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
-"sfu" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 5
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "sgc" = (
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/tile/neutral{
@@ -60978,6 +60944,15 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"swS" = (
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "syQ" = (
 /obj/machinery/vending/games,
 /obj/structure/sign/plaques/deempisi{
@@ -61042,15 +61017,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
-"sRN" = (
-/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "sWe" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -61103,11 +61069,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
-"tbL" = (
-/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer1,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/hallway/secondary/entry)
 "tcb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
@@ -61302,16 +61263,6 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
-"tAP" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external{
-	name = "Port Docking Bay 1"
-	},
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/open/floor/plating,
-/area/hallway/secondary/entry)
 "tCP" = (
 /obj/docking_port/stationary/public_mining_dock,
 /turf/open/floor/plating,
@@ -61546,6 +61497,16 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel,
 /area/construction/mining/aux_base)
+"uDi" = (
+/obj/machinery/holopad,
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "uHG" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -61974,6 +61935,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
+"wyu" = (
+/obj/machinery/atmospherics/pipe/manifold/cyan/hidden/layer1{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "wzb" = (
 /obj/structure/chair,
 /turf/open/floor/wood,
@@ -62314,6 +62284,15 @@
 	},
 /turf/open/floor/plasteel/white/corner,
 /area/hallway/secondary/exit/departure_lounge)
+"xLn" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	name = "Port Docking Bay 1"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "xNx" = (
 /obj/structure/lattice,
 /obj/structure/disposalpipe/junction/flip,
@@ -62344,6 +62323,17 @@
 	},
 /turf/open/floor/plating,
 /area/engine/engineering)
+"xVb" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external{
+	name = "Port Docking Bay 1"
+	},
+/obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/plating,
+/area/hallway/secondary/entry)
 "xWl" = (
 /obj/item/pen,
 /obj/item/paper_bin{
@@ -62376,6 +62366,16 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
+"ydr" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1;
+	icon_state = "vent_map_on-1"
+	},
+/turf/open/floor/plasteel,
+/area/hallway/secondary/entry)
 "ydZ" = (
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/tile/green{
@@ -81275,20 +81275,20 @@ aOf
 aWK
 aYG
 aZy
-sRN
-peW
-rqq
-tAP
+eRM
+xLn
+dqX
+iLF
 aaa
 aaa
 aaa
 aaa
 aaa
 aaa
-lxP
-rqq
-mxP
-sfu
+bXW
+dqX
+xVb
+swS
 bon
 buz
 aaa
@@ -82046,7 +82046,7 @@ aOf
 aWK
 aYG
 aEk
-pUl
+uDi
 baK
 bcZ
 buz
@@ -82059,7 +82059,7 @@ aaa
 buz
 bkR
 baK
-pUl
+uDi
 bon
 buz
 aaa
@@ -82559,8 +82559,8 @@ aTe
 aOk
 ppQ
 aYG
-kWP
-pMh
+daj
+jPc
 aZx
 aZx
 buz
@@ -82817,20 +82817,20 @@ coN
 aWK
 aYG
 aZy
-hfC
-peW
-hQj
-tAP
+wyu
+xLn
+kTz
+iLF
 aaa
 aaa
 aaa
 aaa
 aaa
 aaa
-lxP
-hQj
-gSz
-tbL
+bXW
+kTz
+gnw
+jaY
 bon
 buz
 aaa
@@ -83332,7 +83332,7 @@ aHz
 aYG
 aXm
 baE
-nJo
+ydr
 bbR
 aYG
 aaa
@@ -83343,7 +83343,7 @@ aaa
 aaa
 aYG
 bbR
-ijJ
+pfv
 baE
 bcB
 bbR
