@@ -4,6 +4,7 @@
 #define GREENTEXT 256 // An offset for new greentext-related achievements, to keep the incremental pattern.
 #define REDTEXT 512 // Offset for redtexts.
 #define ENGIEDEPT 768 // Offset for engineering-related achievements.
+#define CARGODEPT 1028 // Offset for Cargo-related achievements
 
 /datum/achievement
 	var/name = "achievement"
@@ -13,7 +14,7 @@
 
 /datum/achievement/bubblegum
 	name = "Kick Ass and Chew Bubblegum"
-	desc = "Kill Bubblegum, the king of slaughter demons." //Should be improved(?)
+	desc = "Kill Bubblegum, the king of slaughter demons."
 	id = 1
 
 /datum/achievement/roboborg
@@ -47,7 +48,7 @@
 	desc = "Kill yourself using the nuclear authentication disk"
 	id = 7
 	hidden = TRUE
-  
+
 /datum/achievement/badass
 	name = "Badass Syndie"
 	desc = "As a traitor, complete your objectives without buying any items"
@@ -112,7 +113,7 @@
 	desc = "As a signal technician, create a script that makes poly LOUD"
 	id = 19
 	hidden = TRUE
-  
+
 /datum/achievement/cargoking
 	name = "King of Credits"
 	desc = "As the QM, beat the current record of cargo credits: " //theoretically, if someone manages to get to an amount that's larger than 1992 digits, this'd break DB things
@@ -123,7 +124,7 @@
 	.=..()
 	var/datum/DBQuery/Q = SSdbcore.NewQuery("SELECT value FROM [format_table_name("misc")] WHERE `key` = 'cargorecord'")
 	Q.Execute()
-	if(Q.item.len)
+	if(Q.item && Q.item.len)
 		amount = Q.item[1]
 	qdel(Q)
 	desc += "[amount]"
@@ -133,7 +134,7 @@
 	desc = "Use a surgical drill to spin right round like a record baby"
 	id = 21
 	hidden = TRUE
-  
+
 /datum/achievement/ducatduke
 	name = "Duke of Ducats"
 	desc = "As the QM, have a million cargo credits by the end of the round" //Cargoking-junior
@@ -158,12 +159,12 @@
 	id = GREENTEXT + 1
 
 /datum/achievement/greentext/ratvar
-	name = "Clock Work"
+	name = "Clocking In"
 	desc = "As a servant of Ratvar, summon Ratvar"
 	id = GREENTEXT + 2
 
 /datum/achievement/greentext/ratvar/eminence
-	name = "Clock Work"
+	name = "Ratvar's Hand"
 	desc = "As the Eminence, summon Ratvar"
 	id = GREENTEXT + 3
 
@@ -271,6 +272,27 @@
 	id = ENGIEDEPT + 4
 //end-engineering
 
+//start-cargo
+/datum/achievement/cargo
+	name = "Glory to Cargonia"
+	desc = "Survive a full round as part of the Supply department."
+	id = CARGODEPT + 1
+/datum/achievement/cargo/bourgeois
+	name = "Top 1%"
+	desc = "Have one million credits on your ID."
+	id = CARGODEPT + 2
+/datum/achievement/cargo/bounties
+	name = "Five Year Plan"
+	desc = "As a member of the Supply department, complete ten bounties."
+	id = CARGODEPT + 3
+/datum/achievement/cargo/bsa
+	name = "\"Glass them.\""
+	desc = "Fire the Bluespace artillery."
+	id = CARGODEPT + 4
+
+//end-cargo
+
 #undef GREENTEXT
 #undef REDTEXT
 #undef ENGIEDEPT
+#undef CARGODEPT

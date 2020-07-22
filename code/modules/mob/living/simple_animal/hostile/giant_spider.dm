@@ -131,9 +131,9 @@
 	QDEL_NULL(set_directive)
 	return ..()
 
-//midwives are the queen of the spiders, can send messages to all them and web faster. That rare round where you get a queen spider and turn your 'for honor' players into 'r6siege' players will be a fun one.
+//broodmothers are the queen of the spiders, can send messages to all them and web faster. That rare round where you get a queen spider and turn your 'for honor' players into 'r6siege' players will be a fun one.
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife
-	name = "midwife"
+	name = "broodmother"
 	desc = "Furry and black, it makes you shudder to look at it. This one has scintillating green eyes. Might also be hiding a real knife somewhere."
 	icon_state = "midwife"
 	icon_living = "midwife"
@@ -323,6 +323,7 @@
 		walk(src,0)
 		if(do_after(src, 50, target = cocoon_target))
 			if(busy == SPINNING_COCOON)
+				log_admin("[src] spun a cocoon around [cocoon_target]")
 				var/obj/structure/spider/cocoon/C = new(cocoon_target.loc)
 				if(isliving(cocoon_target))
 					var/mob/living/L = cocoon_target
@@ -468,6 +469,7 @@
 			if(S.busy == LAYING_EGGS)
 				E = locate() in get_turf(S)
 				if(!E || !isturf(S.loc))
+					log_admin("[src] layed eggs at [S.loc]")
 					var/obj/structure/spider/eggcluster/C = new /obj/structure/spider/eggcluster(get_turf(S))
 					if(S.ckey)
 						C.player_spiders = TRUE

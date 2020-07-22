@@ -12,35 +12,35 @@ SUBSYSTEM_DEF(achievements)
 		var/datum/achievement/A = new i
 		achievements[A] = A.id
 
-		var/datum/DBQuery/medalQuery = SSdbcore.NewQuery("SELECT name, descr FROM [format_table_name("achievements")] WHERE id = '[sanitizeSQL(A.id)]'")
+		var/datum/DBQuery/medalQuery = SSdbcore.NewQuery("SELECT name, descr FROM [format_table_name("achievements")] WHERE id = :id", list("id" = A.id)) // No sanitation of A is needed for these calls because we instantiated A right here in this proc.
 		medalQuery.Execute()
 		if(!medalQuery.NextRow())
-			var/datum/DBQuery/medalQuery2 = SSdbcore.NewQuery("INSERT INTO [format_table_name("achievements")] (name, id, descr) VALUES ('[sanitizeSQL(A.name)]', '[sanitizeSQL(A.id)]', '[sanitizeSQL(A.desc)]')")
+			var/datum/DBQuery/medalQuery2 = SSdbcore.NewQuery("INSERT INTO [format_table_name("achievements")] (name, id, descr) VALUES (:name, :id, :desc)", list("name" = A.name, "id" = A.id, "desc" = A.desc))
 			medalQuery2.Execute()
 			qdel(medalQuery2)
 		else if(medalQuery.item[1] != A.name || medalQuery.item[2] != A.desc)
-			var/datum/DBQuery/medalQuery2 = SSdbcore.NewQuery("UPDATE [format_table_name("achievements")] SET name = '[sanitizeSQL(A.name)]', descr = '[sanitizeSQL(A.desc)]' WHERE id = '[sanitizeSQL(A.id)]'")
+			var/datum/DBQuery/medalQuery2 = SSdbcore.NewQuery("UPDATE [format_table_name("achievements")] SET name = :name, descr = :desc WHERE id = :id", list("name" = A.name, "desc" = A.desc, "id" = A.id))
 			medalQuery2.Execute()
 			qdel(medalQuery2)
-		
+
 		qdel(medalQuery)
-		
-	
+
+
 	var/datum/DBQuery/ridOldChieves = SSdbcore.NewQuery("SELECT id FROM [format_table_name("achievements")]")
 	ridOldChieves.Execute()
 	while(ridOldChieves.NextRow())
-		var/id = text2num(ridOldChieves.item[1])
+		var/id = text2num(ridOldChieves.item[1]) // This id var also doesn't need to be sanitized because it's from the actual database
 		var/found_achievement = FALSE
 		for(var/I in achievements)
 			var/datum/achievement/A = I
-			if(A.id != id)
-				continue
-			found_achievement = TRUE
+			if(A.id == id)
+				found_achievement = TRUE
+				break
 		if(!found_achievement)
 			log_sql("Old achievement [id] found in database, removing")
-			var/datum/DBQuery/getRidOfOldStuff = SSdbcore.NewQuery("DELETE FROM [format_table_name("achievements")] WHERE id = '[sanitizeSQL(id)]'")
+			var/datum/DBQuery/getRidOfOldStuff = SSdbcore.NewQuery("DELETE FROM [format_table_name("achievements")] WHERE id = :id", list("id" = id))
 			getRidOfOldStuff.Execute()
-			var/datum/DBQuery/ridTheOtherTableAsWell = SSdbcore.NewQuery("DELETE FROM [format_table_name("earned_achievements")] WHERE id = '[sanitizeSQL(id)]'")
+			var/datum/DBQuery/ridTheOtherTableAsWell = SSdbcore.NewQuery("DELETE FROM [format_table_name("earned_achievements")] WHERE id = :id", list("id" = id))
 			ridTheOtherTableAsWell.Execute()
 			qdel(ridTheOtherTableAsWell)
 			qdel(getRidOfOldStuff)
@@ -66,14 +66,16 @@ SUBSYSTEM_DEF(achievements)
 
 //Ad-hoc procs
 /datum/controller/subsystem/achievements/proc/unlock_achievement(achievementPath, client/C)
+	if(!C)
+		return FALSE
 	var/datum/achievement/achievement = get_achievement(achievementPath)
 	if(!achievement)
-		log_sql("Achievement [achievementPath] not found in list of achievements when trying to unlock for [C.ckey]")
+		log_sql("Achievement [achievementPath] not found in list of achievements when trying to unlock for [ckey(C.ckey)]")
 		return FALSE
 	if(istype(achievement,/datum/achievement/greentext) && achievementPath != /datum/achievement/greentext)
 		unlock_achievement(/datum/achievement/greentext,C) // Oooh, a little bit recursive!
 	if(!has_achievement(achievementPath, C))
-		var/datum/DBQuery/medalQuery = SSdbcore.NewQuery("INSERT INTO [format_table_name("earned_achievements")] (ckey, id) VALUES ('[sanitizeSQL(C.ckey)]', '[sanitizeSQL(achievement.id)]')")
+		var/datum/DBQuery/medalQuery = SSdbcore.NewQuery("INSERT INTO [format_table_name("earned_achievements")] (ckey, id) VALUES (:ckey, :id)", list("ckey" = ckey(C.ckey), "id" = initial(achievement.id)))
 		medalQuery.Execute()
 		qdel(medalQuery)
 		cached_achievements[C.ckey] += achievement
@@ -86,7 +88,7 @@ SUBSYSTEM_DEF(achievements)
 /datum/controller/subsystem/achievements/proc/has_achievement(achievementPath, client/C)
 	var/datum/achievement/achievement = get_achievement(achievementPath)
 	if(!achievement)
-		log_sql("Achievement [achievementPath] not found in list of achievements when checking for [C.ckey]") 
+		log_sql("Achievement [achievementPath] not found in list of achievements when checking for [C.ckey]")
 		return FALSE
 	if(!cached_achievements[C.ckey])
 		cache_achievements(C)
@@ -94,7 +96,7 @@ SUBSYSTEM_DEF(achievements)
 	return (achievement in cached_achievements[C.ckey])
 
 /datum/controller/subsystem/achievements/proc/cache_achievements(client/C)
-	var/datum/DBQuery/cacheQuery = SSdbcore.NewQuery("SELECT id FROM [format_table_name("earned_achievements")] WHERE ckey = '[sanitizeSQL(C.ckey)]'")
+	var/datum/DBQuery/cacheQuery = SSdbcore.NewQuery("SELECT id FROM [format_table_name("earned_achievements")] WHERE ckey = :ckey", list("ckey" = ckey(C.ckey)))
 	cacheQuery.Execute()
 	cached_achievements[C.ckey] = list()
 	while(cacheQuery.NextRow())

@@ -119,19 +119,16 @@
 	if(!shock(user, 70))
 		take_damage(20, BRUTE, "melee", 1)
 
-
-/obj/structure/grille/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+/obj/structure/grille/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(mover.pass_flags & PASSGRILLE)
 		return TRUE
-	else
-		if(istype(mover, /obj/item/projectile) && density)
-			return prob(30)
-		else
-			return !density
+	else if(!. && istype(mover, /obj/item/projectile))
+		return prob(30)
 
 /obj/structure/grille/CanAStarPass(ID, dir, caller)
 	. = !density
-	if(ismovableatom(caller))
+	if(ismovable(caller))
 		var/atom/movable/mover = caller
 		. = . || (mover.pass_flags & PASSGRILLE)
 

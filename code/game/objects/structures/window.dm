@@ -102,13 +102,15 @@
 	else
 		..(FULLTILE_WINDOW_DIR)
 
-/obj/structure/window/CanPass(atom/movable/mover, turf/target)
+/obj/structure/window/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	if(dir == FULLTILE_WINDOW_DIR)
 		return 0	//full tile window, you can't move into it!
-	if(get_dir(loc, target) == dir)
-		return !density
+	var/attempted_dir = get_dir(loc, target)
+	if(attempted_dir == dir)
+		return
 	if(istype(mover, /obj/structure/window))
 		var/obj/structure/window/W = mover
 		if(!valid_window_location(loc, W.ini_dir))
@@ -119,7 +121,8 @@
 			return FALSE
 	else if(istype(mover, /obj/machinery/door/window) && !valid_window_location(loc, mover.dir))
 		return FALSE
-	return 1
+	else if(attempted_dir != dir)
+		return TRUE
 
 /obj/structure/window/CheckExit(atom/movable/O, turf/target)
 	if(istype(O) && (O.pass_flags & PASSGLASS))
@@ -388,6 +391,13 @@
 	glass_type = /obj/item/stack/sheet/rglass
 	rad_insulation = RAD_HEAVY_INSULATION
 
+/obj/structure/window/reinforced/bronze
+	name = "bronze window"
+	desc = "A paper-thin pane of translucent yet reinforced bronze."
+	icon = 'icons/obj/smooth_structures/clockwork_window.dmi'
+	icon_state = "clockwork_window_single"
+	glass_type = /obj/item/stack/tile/bronze
+
 /obj/structure/window/reinforced/spawner/east
 	dir = EAST
 
@@ -540,6 +550,13 @@
 	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/plasma/fulltile, /obj/structure/window/plasma/reinforced/fulltile)
 	level = 3
 	glass_amount = 2
+
+/obj/structure/window/reinforced/fulltile/bronze
+	name = "bronze window"
+	desc = "A pane of translucent yet reinforced bronze."
+	icon = 'icons/obj/smooth_structures/clockwork_window.dmi'
+	icon_state = "clockwork_window"
+	glass_type = /obj/item/stack/tile/bronze
 
 /obj/structure/window/shuttle
 	name = "shuttle window"
