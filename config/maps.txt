@@ -28,6 +28,12 @@ map yogsmeta
 	votable
 endmap
 
+map yogstheta
+	minplayers 15
+	maxplayers 50
+	votable
+endmap
+
 map yogsdelta
 	minplayers 50
 	votable
