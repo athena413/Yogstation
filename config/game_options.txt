@@ -358,7 +358,7 @@ CONFIG_GATEWAY_CHANCE 0
 ## If the number of players ready at round starts exceeds this threshold, JOBS_HAVE_MINIMAL_ACCESS will automatically be enabled. Otherwise, it will be disabled.
 ## This is useful for accomodating both low and high population rounds on the same server.
 ## Comment this out or set to 0 to disable this automatic toggle.
-MINIMAL_ACCESS_THRESHOLD 18
+MINIMAL_ACCESS_THRESHOLD 21
 
 ## Comment this out this if you wish to use the setup where jobs have more access.
 ## This is intended for servers with low populations - where there are not enough
@@ -441,9 +441,9 @@ LAW_WEIGHT custom,0
 ION_LAW_WEIGHT custom,0
 
 ## standard-ish laws. These are fairly ok to run
-LAW_WEIGHT asimov,3
+LAW_WEIGHT asimov,5
 ION_LAW_WEIGHT asimov,1
-LAW_WEIGHT crewsimov,5
+LAW_WEIGHT crewsimov,1
 ION_LAW_WEIGHT crewsimov,1
 LAW_WEIGHT asimovpp,2
 ION_LAW_WEIGHT asimovpp,2
@@ -453,7 +453,7 @@ LAW_WEIGHT paladin5,0
 ION_LAW_WEIGHT paladin5,2
 LAW_WEIGHT robocop,0
 ION_LAW_WEIGHT robocop,2
-LAW_WEIGHT ceo,4
+LAW_WEIGHT ceo,3
 ION_LAW_WEIGHT ceo,1
 
 ## Quirky laws. Shouldn't cause too much harm
@@ -615,9 +615,9 @@ REACTIONARY_EXPLOSIONS
 ## Can be any number above 4, some examples are provided below.
 
 ## Yogs (3, 6, 12)
-BOMBCAP 12
+#BOMBCAP 12
 ## Small (3, 7, 14)
-#BOMBCAP 14
+BOMBCAP 14
 ## Default (5, 10, 20) (recommended if you enable REACTIONARY_EXPLOSIONS above)
 #BOMBCAP 20
 ## LagHell (7, 14, 28)
